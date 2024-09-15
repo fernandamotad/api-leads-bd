@@ -30,6 +30,7 @@ def inserir_usuario(nivel, nome, login, senha):
     if connection:
         cursor.close()  
         connection.close()  
+
 def consultar_usuario(login_nome):
     try:
         connection = conect_db()
@@ -52,6 +53,25 @@ def consultar_usuario(login_nome):
             cursor.close()  
             connection.close()  
 
+def listar_todos_usuarios():
+    try:
+        connection = conect_db()
+        cursor = connection.cursor()
+        
+        cursor.execute("SELECT * FROM usuario;")
+        usuarios = cursor.fetchall()  # Retorna todos os registros
+        if usuarios:
+            for usuario in usuarios:
+                print(f'ID: {usuario[0]}, Nome: {usuario[2]}, Login: {usuario[3]}, Nível de Acesso: {usuario[1]}')
+        else:
+            print("Nenhum usuário encontrado.")
+    except (Exception, psycopg2.Error) as error:
+        print("Erro ao consultar usuários:", error)
+    finally:
+        if connection:
+            cursor.close()
+            connection.close()
+
 # Código de execução
 if __name__ == "__main__":
   quantidade = input('Deseja cadastrar quantos usuários? ')
@@ -61,18 +81,17 @@ if __name__ == "__main__":
     print("Por favor, insira um número válido.")
   for i in range(1, quantidade + 1): 
     print(f'Digite as informações do {i}° usuário ')
-    nivel = input('Digite o nível de acesso: ')
     while True:
-      try:
-        nivel = int(input('Digite o nível de acesso: '))
-        break  
-      except ValueError:
-        print('O nível de acesso deve ser um número inteiro. Tente novamente.')
+        try:
+            nivel = int(input('Digite o nível de acesso: '))
+            break  
+        except ValueError:
+            print('O nível de acesso deve ser um número inteiro. Tente novamente.')
     nome = input('Digite o nome: ')
     login = input('Digite o login: ')
     senha = input("Digite a senha: ")
     inserir_usuario(nivel, nome, login, senha)
-  print('Usuários Cadastrados')
+
   
   usuario_consulta = input('Digite o nome de usuario que deseja consultar: ')
 
