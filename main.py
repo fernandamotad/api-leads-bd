@@ -1,6 +1,7 @@
 import psycopg2
 from db import Database
 from usuario import Usuario
+from lead import Lead
 
 if __name__ == "__main__":
     # Inicializa o banco de dados
@@ -10,6 +11,9 @@ if __name__ == "__main__":
         user="postgres",      # Usuário do banco
         password="sua_senha"  # Senha do banco
     )
+
+
+
 
     usuario_service = Usuario(db)
 
@@ -35,3 +39,25 @@ if __name__ == "__main__":
     usuario_consulta = input('Digite o nome ou login do usuário que deseja consultar: ')
     usuario_service.consultar_usuario(usuario_consulta)
 
+
+
+
+
+    lead_service = Lead(db)
+
+    # Exemplo de inserção de lead
+    nome = input("Digite o nome do lead: ")
+    telefone = input("Digite o telefone do lead: ")
+
+    telefone_adicional = input("Digite o telefone adicional do lead (opcional): ") or None
+    email = input("Digite o email do lead (opcional): ") or None
+    anotacao = input("Digite uma anotação (opcional): ") or None
+    
+    lead_service.inserir_lead(nome, telefone, telefone_adicional, email, anotacao)
+
+    # Exemplo de consulta de lead
+    lead_consulta = input("Digite o nome ou telefone do lead para consultar: ")
+    lead_service.consultar_lead(lead_consulta)
+
+    # Exemplo de listar todos os leads
+    lead_service.listar_todos_leads()
