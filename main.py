@@ -1,0 +1,37 @@
+import psycopg2
+from db import Database
+from usuario import Usuario
+
+if __name__ == "__main__":
+    # Inicializa o banco de dados
+    db = Database(
+        host="localhost",     # Endpoint do banco de dados 
+        database="",          # Nome do banco de dados
+        user="postgres",      # Usuário do banco
+        password="sua_senha"  # Senha do banco
+    )
+
+    usuario_service = Usuario(db)
+
+    quantidade = input('Deseja cadastrar quantos usuários? ')
+    try:
+        quantidade = int(quantidade)
+    except ValueError:
+        print("Por favor, insira um número válido.")
+    
+    for i in range(1, quantidade + 1):
+        print(f'Digite as informações do {i}° usuário ')
+        while True:
+            try:
+                nivel = int(input('Digite o nível de acesso: '))
+                break
+            except ValueError:
+                print('O nível de acesso deve ser um número inteiro. Tente novamente.')
+        nome = input('Digite o nome: ')
+        login = input('Digite o login: ')
+        senha = input("Digite a senha: ")
+        usuario_service.inserir_usuario(nivel, nome, login, senha)
+
+    usuario_consulta = input('Digite o nome ou login do usuário que deseja consultar: ')
+    usuario_service.consultar_usuario(usuario_consulta)
+
