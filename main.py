@@ -16,7 +16,8 @@ if __name__ == "__main__":
 
 
     usuario_service = Usuario(db)
-
+    
+    print("Vamos cadastrar usuários ao sistema")    
     quantidade = input('Deseja cadastrar quantos usuários? ')
     try:
         quantidade = int(quantidade)
@@ -46,6 +47,7 @@ if __name__ == "__main__":
     lead_service = Lead(db)
 
     # Exemplo de inserção de lead
+    print("Agora vamos cadastrar um lead ao sistema")
     nome = input("Digite o nome do lead: ")
     telefone = input("Digite o telefone do lead: ")
 
