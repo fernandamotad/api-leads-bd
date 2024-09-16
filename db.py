@@ -2,11 +2,11 @@ import psycopg2
 
 class Database:
     def __init__(self, host, database, user, password, port="5432"):
-        self.host = host
-        self.database = database
-        self.user = user
-        self.password = password
-        self.port = port
+        self.host = "database-1.c8v407oicw0t.us-east-1.rds.amazonaws.com"
+        self.database = "Multiple-lead"
+        self.user = "postgres"
+        self.password = '88778159'
+        self.port = '5432'
     
     def conectar(self):
         try:

@@ -6,10 +6,10 @@ from lead import Lead
 if __name__ == "__main__":
     # Inicializa o banco de dados
     db = Database(
-        host="localhost",     # Endpoint do banco de dados 
-        database="",          # Nome do banco de dados
+        host="database-1.c8v407oicw0t.us-east-1.rds.amazonaws.com",     # Endpoint do banco de dados 
+        database="Multiple-lead",          # Nome do banco de dados
         user="postgres",      # Usuário do banco
-        password="sua_senha"  # Senha do banco
+        password="88778159"  # Senha do banco
     )
 
 
