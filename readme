@@ -1,0 +1,37 @@
+SCRIPT SQL
+
+**********CRIAÇÃO DA TABELA USUARIO************
+
+CREATE TABLE usuario (
+    idusuario SERIAL PRIMARY KEY,            -- Corrigido para "idusuario" conforme a imagem
+    nivel_de_acesso INT NOT NULL,            -- Corrigido para "nivel_de_acesso"
+    nome VARCHAR(45) NOT NULL,
+    login VARCHAR(45) NOT NULL UNIQUE,
+    senha VARCHAR(45) NOT NULL
+    
+);
+
+**********CRIAÇÃO DA TABELA LEAD************
+
+CREATE TABLE lead (
+    idlead SERIAL PRIMARY KEY,               
+    nome VARCHAR(45) NOT NULL,
+    telefone VARCHAR(14) NOT NULL,
+    telefone_adicional VARCHAR(14),        
+    email VARCHAR(45),
+    anotacao TEXT
+);
+
+**********CRIAÇÃO DA TABELA NEGÓCIO************
+CREATE TABLE negocio (
+    id_negocio SERIAL PRIMARY KEY,
+    descricao VARCHAR(45),                             
+    previsao_venda DATE,                        
+    etapa VARCHAR(45) NOT NULL,
+    vencimento_atualizacao DATE NOT NULL,
+    data_inclusao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idlead INT NOT NULL,                         -- Chave estrangeira (Lead)
+    idusuario INT NOT NULL,                      -- Chave estrangeira (Usuário),
+    CONSTRAINT fk_lead FOREIGN KEY (idlead) REFERENCES lead(idlead),
+    CONSTRAINT fk_usuario FOREIGN KEY (idusuario) REFERENCES usuario(idusuario)
+);
