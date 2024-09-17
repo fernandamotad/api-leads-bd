@@ -91,6 +91,7 @@ def menu_negocio():
     print("3. Listar Todos os Negócios")
 
     escolha = int(input("Escolha uma opção: "))
+
     if escolha == 1:
         titulo = input("Digite o título do negócio: ")
         vencimento_atualizacao = input("Digite a data de vencimento da atualização: ")
@@ -99,12 +100,19 @@ def menu_negocio():
         idusuario = input("Digite o ID do usuário responsável: ")
         descricao = input("Digite a descrição (opcional): ") or None
         previsao_venda = input("Digite a previsão de venda (opcional): ") or None
-        negocio_service.inserir_negocio(titulo, vencimento_atualizacao, idlead, etapa, idusuario, descricao, previsao_venda)
+        negocio_service.inserir_negocio(
+            titulo, vencimento_atualizacao, 
+            idlead, etapa, idusuario, 
+            descricao, previsao_venda)
+        
+
     elif escolha == 2:
         consulta_negocio = input("Digite o título ou ID do negócio: ")
         negocio_service.consultar_negocio(consulta_negocio)
+    
     elif escolha == 3:
         negocio_service.listar_todos_negocios()
+   
     else:
         print("Opção inválida.")
 
