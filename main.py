@@ -94,7 +94,7 @@ def menu_negocio():
 
     if escolha == 1:
         titulo = input("Digite o título do negócio: ")
-        vencimento_atualizacao = input("Digite a data de vencimento da atualização: ")
+        vencimento_atualizacao = input("Digite a data limite da próxima atualização no formato dd/mm/aaaa: ")
         idlead = input("Digite o ID do lead: ")
         etapa = input("Digite a etapa do negócio: ")
         idusuario = input("Digite o ID do usuário responsável: ")

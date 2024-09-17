@@ -35,7 +35,7 @@ class Negocio:
                 previsao_venda if previsao_venda else None
             ))
             connection.commit()
-            print(f'Novo negócio do negocio {titulo} foi cadastrado com sucesso!')
+            print(f'O negócio {titulo} foi cadastrado com sucesso!')
         
         except Exception as e:
            print("Erro ao inserir Negocio:", e)                
