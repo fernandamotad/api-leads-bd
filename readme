@@ -1,4 +1,9 @@
--- Para adicionar as dependencias utilizem o comando: 
+-- Para adicionar as dependências utilizar o comando: 
     pip install -r requirements.txt
 
--- Importante ter o arquivo .env com as credenciais do banco de dados
+-- É necessário ter o arquivo ".env" com as credenciais do banco de dados.
+
+-- O Script SQL está dentro do arquivo "script.sql"
+
+
+
