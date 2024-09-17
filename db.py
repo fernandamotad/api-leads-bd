@@ -1,11 +1,15 @@
 import psycopg2
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Database:
     def __init__(self, host, database, user, password, port="5432"):
-        self.host = "database-1.c8v407oicw0t.us-east-1.rds.amazonaws.com"
+        self.host = os.getenv('host')
         self.database = "Multiple-lead"
-        self.user = "postgres"
-        self.password = '88778159'
+        self.user = os.getenv('user')
+        self.password = os.getenv('password')
         self.port = '5432'
     
     def conectar(self):
