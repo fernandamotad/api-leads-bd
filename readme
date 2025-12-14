@@ -1,46 +1,34 @@
-# API Leads BD
+# 📊 API Leads BD
 
-Este repositório contém uma API que realiza a manipulação de **leads** e interage com um banco de dados. O objetivo é gerenciar e armazenar informações de leads de forma eficiente, utilizando Python e banco de dados relacional.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Funcionalidades
-- **Criação, leitura, atualização e exclusão de leads**
-- **Armazenamento em banco de dados MySQL/PostgreSQL**
-- **Validação de dados de leads**
+Este repositório contém uma API desenvolvida para a manipulação de **leads** e interação com banco de dados relacional. O objetivo principal é gerenciar, validar e armazenar informações de leads de forma eficiente e escalável.
 
-## Tecnologias Utilizadas
-- **Python**
-- **Pandas**
-- **MySQL/PostgreSQL**
-- **SQLAlchemy**
-- **Flask/FastAPI (dependendo da implementação da API)**
+## 🚀 Funcionalidades
 
-## Estrutura do Projeto
-- `main.py`: Arquivo principal da API.
-- `db.py`: Conexão e manipulação do banco de dados.
-- `lead.py`: Modelo e manipulação dos dados dos leads.
-- `negocio.py`: Lógica de negócios relacionada aos leads.
-- `usuario.py`: Gerenciamento de usuários e autenticação.
-- `requirements.txt`: Dependências necessárias.
-- `script.sql`: Script SQL para criação de banco de dados.
+- **CRUD Completo:** Criação, leitura, atualização e exclusão de leads.
+- **Persistência de Dados:** Integração com bancos de dados relacionais (MySQL/PostgreSQL).
+- **Validação:** Verificação de integridade dos dados recebidos.
+- **Autenticação:** Gerenciamento básico de usuários (conforme estrutura do projeto).
 
-## Como Rodar o Projeto
+## 🛠️ Tecnologias Utilizadas
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/fernandamotad/api-leads-bd.git
+* **Linguagem:** [Python](https://www.python.org/)
+* **Web Framework:** Flask / FastAPI
+* **Manipulação de Dados:** [Pandas](https://pandas.pydata.org/)
+* **ORM:** [SQLAlchemy](https://www.sqlalchemy.org/)
+* **Banco de Dados:** MySQL / PostgreSQL
 
-2. Instale as dependências:
-   ```bash
-pip install -r requirements.txt
+## 📂 Estrutura do Projeto
 
-3. Configure o banco de dados:
-- Crie o banco de dados e configure as credenciais no arquivo .env.
-
-4. Execute o servidor:
-   ```bash
-python main.py
-
-## Como Executar os Testes
-Para rodar os testes, use o comando:
-   ```bash
-pytest
+```text
+api-leads-bd/
+├── db.py            # Configuração e conexão com o banco de dados
+├── lead.py          # Modelo (Model) e manipulação dos dados dos leads
+├── main.py          # Ponto de entrada (Entry point) da API
+├── negocio.py       # Regras de negócio e lógica de validação
+├── usuario.py       # Gerenciamento de usuários e autenticação
+├── requirements.txt # Lista de dependências do projeto
+└── script.sql       # Script inicial para criação das tabelas
