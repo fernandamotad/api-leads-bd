@@ -1,9 +1,46 @@
--- Para adicionar as dependências utilizar o comando: 
-    pip install -r requirements.txt
+# API Leads BD
 
--- É necessário ter o arquivo ".env" com as credenciais do banco de dados.
+Este repositório contém uma API que realiza a manipulação de **leads** e interage com um banco de dados. O objetivo é gerenciar e armazenar informações de leads de forma eficiente, utilizando Python e banco de dados relacional.
 
--- O Script SQL está dentro do arquivo "script.sql"
+## Funcionalidades
+- **Criação, leitura, atualização e exclusão de leads**
+- **Armazenamento em banco de dados MySQL/PostgreSQL**
+- **Validação de dados de leads**
 
+## Tecnologias Utilizadas
+- **Python**
+- **Pandas**
+- **MySQL/PostgreSQL**
+- **SQLAlchemy**
+- **Flask/FastAPI (dependendo da implementação da API)**
 
+## Estrutura do Projeto
+- `main.py`: Arquivo principal da API.
+- `db.py`: Conexão e manipulação do banco de dados.
+- `lead.py`: Modelo e manipulação dos dados dos leads.
+- `negocio.py`: Lógica de negócios relacionada aos leads.
+- `usuario.py`: Gerenciamento de usuários e autenticação.
+- `requirements.txt`: Dependências necessárias.
+- `script.sql`: Script SQL para criação de banco de dados.
 
+## Como Rodar o Projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/fernandamotad/api-leads-bd.git
+
+2. Instale as dependências:
+   ```bash
+pip install -r requirements.txt
+
+3. Configure o banco de dados:
+- Crie o banco de dados e configure as credenciais no arquivo .env.
+
+4. Execute o servidor:
+   ```bash
+python main.py
+
+## Como Executar os Testes
+Para rodar os testes, use o comando:
+   ```bash
+pytest
