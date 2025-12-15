@@ -4,31 +4,77 @@
 ![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Este repositório contém uma API desenvolvida para a manipulação de **leads** e interação com banco de dados relacional. O objetivo principal é gerenciar, validar e armazenar informações de leads de forma eficiente e escalável.
+API desenvolvida para gerenciamento de **leads**, com foco em organização, validação e persistência de dados em banco relacional.  
+O projeto tem como objetivo fornecer uma base simples e extensível para operações de cadastro e controle de leads.
+
+---
 
 ## 🚀 Funcionalidades
 
-- **CRUD Completo:** Criação, leitura, atualização e exclusão de leads.
-- **Persistência de Dados:** Integração com bancos de dados relacionais (MySQL/PostgreSQL).
-- **Validação:** Verificação de integridade dos dados recebidos.
-- **Autenticação:** Gerenciamento básico de usuários (conforme estrutura do projeto).
+- CRUD completo de leads
+- Persistência de dados em banco relacional
+- Validação de dados de entrada
+- Estrutura preparada para regras de negócio
+- Organização em camadas para facilitar manutenção e evolução
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Linguagem:** [Python](https://www.python.org/)
-* **Web Framework:** Flask / FastAPI
-* **Manipulação de Dados:** [Pandas](https://pandas.pydata.org/)
-* **ORM:** [SQLAlchemy](https://www.sqlalchemy.org/)
-* **Banco de Dados:** MySQL / PostgreSQL
+- **Linguagem:** Python  
+- **Framework Web:** Flask ou FastAPI  
+- **Manipulação de Dados:** Pandas  
+- **ORM:** SQLAlchemy  
+- **Banco de Dados:** MySQL ou PostgreSQL  
+
+---
 
 ## 📂 Estrutura do Projeto
 
 ```text
 api-leads-bd/
 ├── db.py            # Configuração e conexão com o banco de dados
-├── lead.py          # Modelo (Model) e manipulação dos dados dos leads
-├── main.py          # Ponto de entrada (Entry point) da API
-├── negocio.py       # Regras de negócio e lógica de validação
-├── usuario.py       # Gerenciamento de usuários e autenticação
-├── requirements.txt # Lista de dependências do projeto
-└── script.sql       # Script inicial para criação das tabelas
+├── lead.py          # Modelo e operações relacionadas aos leads
+├── main.py          # Ponto de entrada da aplicação
+├── negocio.py       # Regras de negócio e validações
+├── usuario.py       # Gerenciamento de usuários
+├── requirements.txt # Dependências do projeto
+└── script.sql       # Script de criação das tabelas
+
+---
+
+## Como Executar o Projeto
+
+1. Clonar o repositório
+```bash
+git clone https://github.com/fernandamotad/api-leads-bd.git
+cd api-leads-bd
+
+2. Criar ambiente virtual
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux ou Mac
+venv\Scripts\activate      # Windows
+
+3. Instalar dependências
+```bash
+pip install -r requirements.txt
+
+4. Configurar o banco de dados
+- Criar o banco de dados
+- Executar o arquivo script.sql
+- Ajustar as credenciais no arquivo de configuração
+
+5. Executar a aplicação
+```bash
+python main.py
+
+## 🔍 Objetivo do Projeto
+
+Este projeto foi desenvolvido com foco em:
+- boas práticas de organização de código
+- separação de responsabilidades
+- integração entre API e banco de dados
+- base sólida para evolução futura
+
+É um projeto acadêmico e prático, voltado para aprendizado e consolidação de conceitos de backend.
